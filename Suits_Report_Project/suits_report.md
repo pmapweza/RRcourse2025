@@ -27,3 +27,6 @@ Markdown
 ## 6. Description of Changes
 
 The viewership of *Suits* showed a general downward trend over its nine seasons
+## Example Code Snippet
+
+Here is an example of some code:

@@ -1,12 +1,31 @@
+{r setup}
+library(reticulate)
+use_python("C:\Program Files\Python312\python.exe"
 ---
 title: "Assignment"
 author: ""
 date: today
 output: html_document
+params:
+     season: 1
+     format: pdf # Or html 
 ---
+```{python}
+season_info = { 
+     "season_number": 1, # We will try to make this dynmaic later
+     "episodes": 10,     # You might need to adjust this
+     "network": "HBO"    # You might 
+     need to adjust this
+ }
 
+import pandas as pd
+season_data_file = f"Data/season{season_info['season_number]']}.csv"
+data = pd.read_csv(season_data_file)
+print(data.head())
+```
 ```{r}
-load("../Data/season_1.RData")
+load(paste0("../Data/season_",
+params$season, ".RData"))
 ```
 
 # Game of Thrones - Season 1 summary in numbers
